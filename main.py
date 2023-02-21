@@ -13,4 +13,8 @@ app = FastAPI()  #Creamos su una instancia de FastAPI
 #esta es nuetsra función de la operación de path
 #sera llamada cada vez que reciba un request en la URL "/" usando una operación GET
 async def root(): #Función asincrona
-    return {"message":"Hello Word"} #retorno de la función
+    return {"message":"Mi primera API"} #retorno de la función
+
+@app.get('/items/{item_id}')
+async def read_item(item_id: int):
+    return {"item_id":item_id}
